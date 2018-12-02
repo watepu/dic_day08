@@ -1,0 +1,18 @@
+<h1>ブログを書く</h1>
+
+<%= form_with(model: @blog, local: true) do |form| %>
+
+  <div class="blog_title">
+    <h3>タイトル</h3>
+    <%= form.text_field :title, :class => 'title_form' %>
+  </div>
+
+  <div class="content">
+    <h3>内容</h3>
+    <%= form.text_area :content, :class => 'content_form' %>
+  </div>
+
+  <div>
+  <%= form.submit "保存する", :class => "btn" %>
+</div>
+<% end %>
