@@ -1,23 +1,32 @@
-<h1>ブログ一覧</h1>
+<!DOCTYPE html>
+<html lang="en">
 
-<table>
-  <tr>
-    <th>タイトル</th>
-    <th>内容</th>
-    <th>編集</th>
-    <th>削除</th>
-    <th>詳細</th>
-  </tr>
+  <body>
 
-  <% @blogs.each do |blog| %>
-  <tr>
-    <td><%= blog.title %></td>
-    <td><%= blog.content %></td>
-    <td><%= link_to "編集" ,edit_blog_path(blog.id), class: 'btn btn-info' %></td>
-    <td><%= link_to "削除" ,blog_path(blog.id), class: 'btn btn-danger', method: :delete %></td>
-    <td><%= link_to "詳細" ,blog_path(blog.id), class: 'btn btn-success' %></td>
-  </tr>
-  <% end %>
-</table>
+    <h1>ブログ一覧</h1>
 
-<%= link_to "新規", new_blog_path,class: 'btn btn-primary' %>
+    <table>
+      <tr>
+        <th>タイトル</th>
+        <th>内容</th>
+        <th>編集</th>
+        <th>削除</th>
+        <th>詳細</th>
+      </tr>
+
+      <% @blogs.each do |blog| %>
+      <tr>
+        <td><%= blog.title %></td>
+        <td><%= blog.content %></td>
+        <td><%= link_to "編集" ,edit_blog_path(blog.id), class: 'btn btn-info' %></td>
+        <td><%= link_to "削除" ,blog_path(blog.id), class: 'btn btn-danger', method: :delete %></td>
+        <td><%= link_to "詳細" ,blog_path(blog.id), class: 'btn btn-success' %></td>
+      </tr>
+      <% end %>
+    </table>
+
+    <%= link_to "新規", new_blog_path,class: 'btn btn-primary' %>
+
+  </body>
+
+</html>
